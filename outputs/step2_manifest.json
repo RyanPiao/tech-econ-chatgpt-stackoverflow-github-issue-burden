@@ -1,0 +1,14 @@
+{
+  "artifact": "Step 2 synthetic demonstration panel",
+  "created_at_utc": "2026-03-12T12:09:04.865598+00:00",
+  "seed": 20260312,
+  "sample_start": "2021-01-01",
+  "sample_end": "2024-12-01",
+  "n_rows": 384,
+  "n_ecosystems": 8,
+  "panel_frequency": "monthly",
+  "unit_of_analysis": "ecosystem-month",
+  "intervention_timing": "2022-11-30 public launch; post indicator begins at 2022-12 monthly observations",
+  "provenance": "synthetic demonstration only",
+  "synthetic_note": "This file is a transparent synthetic demonstration used to validate Step 2 schema, merging logic, and preanalysis scaffolding without claiming empirical findings from real public-source extraction."
+}

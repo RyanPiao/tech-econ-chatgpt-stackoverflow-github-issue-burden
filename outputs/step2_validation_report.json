@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "errors": [],
+  "warnings": [
+    {
+      "check": "global_month_sort",
+      "message": "Global month ordering is not monotonic because the panel is sorted by ecosystem then month. This is acceptable."
+    }
+  ],
+  "summary": {
+    "n_rows": 384,
+    "n_ecosystems": 8,
+    "sample_start": "2021-01-01",
+    "sample_end": "2024-12-01",
+    "issues_opened_range": [
+      42,
+      80
+    ],
+    "median_close_days_range": [
+      7.96,
+      12.0
+    ]
+  }
+}

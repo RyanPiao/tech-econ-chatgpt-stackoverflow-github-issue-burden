@@ -1,0 +1,17 @@
+variable,dtype,definition,role
+month,date,Calendar month for the ecosystem-month panel row.,index
+ecosystem,string,Technology ecosystem grouped from Stack Overflow tags and representative GitHub repositories.,index
+stack_overflow_tag_anchor,string,Main Stack Overflow tag used to define the ecosystem in Step 2.,mapping
+github_repo_group,string,Representative public GitHub repositories associated with the ecosystem.,mapping
+representative_repo_count,integer,Count of representative repositories in the GitHub group mapping.,descriptor
+month_index,integer,Zero-based sequential month index in the sample window.,time
+post_chatgpt,integer,"Indicator equal to 1 for months beginning in 2022-12 and later, 0 otherwise.",treatment_timing
+so_dependence_pre,float,"Pre-period Stack Overflow dependence score fixed before the intervention. In the synthetic demonstration this is assigned transparently, not estimated from real public data.",treatment_intensity
+treatment_intensity,float,Interaction of post_chatgpt and so_dependence_pre.,treatment_intensity
+active_repos_observed,integer,Synthetic count of active repositories observed in the ecosystem-month.,descriptor
+stackoverflow_questions_month,integer,Synthetic monthly Stack Overflow question count aligned to the ecosystem anchor tag.,input_proxy
+issues_opened,integer,Synthetic count of GitHub issues opened in the ecosystem-month.,primary_outcome
+median_close_days,float,Synthetic median issue close duration in days for issues closed in the month.,primary_outcome
+avg_first_response_hours,float,Synthetic average hours from issue open to first maintainer response.,secondary_outcome
+backlog_open_end_month,integer,Synthetic count of still-open issues at month end.,primary_outcome
+is_synthetic,integer,Indicator equal to 1 for all rows in this Step 2 demonstration panel.,provenance
