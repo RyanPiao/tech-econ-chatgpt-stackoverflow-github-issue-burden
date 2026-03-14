@@ -1,0 +1,5 @@
+post_label,mean_issues_opened,mean_close_days,mean_response_hours,mean_backlog,mean_issues_per_repo,dependence_group
+Post-ChatGPT,59.46,10.107,14.447,159.2,0.607,Low pre-period Stack Overflow dependence
+Pre-ChatGPT,49.663,9.299,13.077,144.848,0.52,Low pre-period Stack Overflow dependence
+Post-ChatGPT,69.06,10.792,16.035,168.48,0.548,High pre-period Stack Overflow dependence
+Pre-ChatGPT,57.87,9.738,13.975,153.25,0.468,High pre-period Stack Overflow dependence

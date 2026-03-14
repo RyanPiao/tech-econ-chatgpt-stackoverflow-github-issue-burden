@@ -1,0 +1,16 @@
+{
+  "status": "ok",
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "n_rows": 384,
+    "n_ecosystems": 8,
+    "issue_burden_index_range": [
+      -1.318054841275811,
+      1.3345763352020374
+    ],
+    "event_time_rows": 144,
+    "diagnostic_rows": 6,
+    "change_rows": 7
+  }
+}

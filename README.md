@@ -6,7 +6,7 @@ Canonical project repo for the approved topic:
 ## Status
 - ✅ Step 1: problem framing
 - ✅ Step 2: data extraction specification and preanalysis lock
-- ⏳ Step 3: exploratory analysis artifacts
+- ✅ Step 3: exploratory analysis and identification-ready scaffolding
 - ⏳ Step 4: baseline econometric model
 - ⏳ Step 5: robustness checks
 - ⏳ Step 6: dynamic and heterogeneity checks
@@ -15,17 +15,17 @@ Canonical project repo for the approved topic:
 ## Research question
 After ChatGPT's public launch, did software ecosystems that relied more heavily on Stack Overflow experience a larger increase in GitHub issue burden?
 
-## Step 2 summary
-This repository now includes a reproducible Step 2 handoff built around:
+## Current repository scope
+This repository now includes:
 - a locked ecosystem-month panel design;
-- a public-source extraction specification for Stack Overflow / Stack Exchange and GitHub issue histories;
-- a preanalysis lock that fixes the core treatment, timing, and outcome definitions; and
-- a synthetic demonstration dataset that validates the schema and pipeline without pretending to be empirical evidence.
+- a synthetic demonstration dataset used to validate structure and pipeline logic;
+- exploratory summaries comparing higher- and lower-dependence ecosystems; and
+- a first-pass fixed-effects preview that checks whether the synthetic panel moves in the hypothesized direction.
 
-## Why the current Step 2 data are synthetic
-The intended long-run design uses public-source data. For this Step 2 handoff, the repository ships a synthetic demonstration panel instead of a live public scrape.
+## Why the current data are synthetic
+The intended long-run design uses public-source data. The current repository ships a synthetic demonstration panel instead of a live public scrape.
 
-That is intentional. A quick partial scrape would be easy to misread as real evidence, while a transparent synthetic panel lets readers inspect the data structure, variable definitions, merge logic, and validation checks in a reproducible way. The synthetic files in this repository are for **pipeline validation only**.
+That choice is deliberate. A quick partial scrape would be easy to over-interpret, while a transparent synthetic panel lets readers inspect the data structure, variable definitions, merge logic, and model code without mistaking the present outputs for real-world evidence. The synthetic files in this repository are for **workflow validation and exploratory modeling only**.
 
 ## Core variables
 - **Primary outcome family:** GitHub issue burden, measured with issue-open counts, median close duration, and month-end open backlog
@@ -38,19 +38,27 @@ That is intentional. A quick partial scrape would be easy to misread as real evi
 .
 ├── README.md
 ├── requirements-step2.txt
+├── requirements-step3.txt
 ├── docs/
 │   ├── STEP1_problem_framing.md
 │   ├── STEP2_data_extraction_spec.md
-│   └── STEP2_preanalysis_lock.md
+│   ├── STEP2_preanalysis_lock.md
+│   └── STEP3_exploratory_analysis.md
 ├── notebooks/
 │   └── STEP2_synthetic_panel_walkthrough.ipynb
 ├── outputs/
 │   ├── step2_manifest.json
 │   ├── step2_synthetic_panel.csv
 │   ├── step2_validation_report.json
-│   └── step2_variable_dictionary.csv
+│   ├── step2_variable_dictionary.csv
+│   ├── step3_ecosystem_summary.csv
+│   ├── step3_key_metrics.json
+│   ├── step3_manifest.json
+│   ├── step3_prepost_summary.csv
+│   └── step3_twfe_preview.csv
 └── scripts/
     ├── build_step2_synthetic_panel.py
+    ├── run_step3_eda.py
     └── validate_step2_outputs.py
 ```
 
@@ -71,16 +79,28 @@ That is intentional. A quick partial scrape would be easy to misread as real evi
 - `outputs/step2_manifest.json`
 - `outputs/step2_validation_report.json`
 
-## Reproduce Step 2 outputs
+### Step 3
+- `docs/STEP3_exploratory_analysis.md`
+- `requirements-step3.txt`
+- `scripts/run_step3_eda.py`
+- `outputs/step3_ecosystem_summary.csv`
+- `outputs/step3_prepost_summary.csv`
+- `outputs/step3_twfe_preview.csv`
+- `outputs/step3_key_metrics.json`
+- `outputs/step3_manifest.json`
+
+## Reproduce Step 3 outputs
 From the repository root:
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements-step2.txt
-python scripts/build_step2_synthetic_panel.py
-python scripts/validate_step2_outputs.py
+python3 -m venv .venv-step3
+source .venv-step3/bin/activate
+pip install -r requirements-step3.txt
+python scripts/run_step3_eda.py
 ```
 
+## Step 3 preview takeaway
+In the synthetic panel, ecosystems with higher pre-period Stack Overflow dependence show somewhat larger post-ChatGPT increases in issue inflow, first-response delay, and close-duration pressure. The backlog signal is weaker, which makes it a natural target for deeper model refinement in the next step.
+
 ## Current interpretation boundary
-This repository does **not** yet report empirical findings about the magnitude or welfare implications of any shift from Stack Overflow toward GitHub issues. Step 2 only fixes the extraction plan, variable definitions, and analysis-ready panel structure needed for later work.
+This repository still does **not** claim empirical estimates from live public data. Step 3 is an exploratory check that the panel design, summary statistics, and fixed-effects scaffold behave coherently before the baseline econometric specification is formalized in Step 4.

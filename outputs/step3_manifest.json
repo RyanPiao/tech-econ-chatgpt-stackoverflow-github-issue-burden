@@ -1,0 +1,17 @@
+{
+  "step": 3,
+  "description": "Exploratory analysis and fixed-effects preview on the synthetic ecosystem-month panel.",
+  "source_panel": "outputs/step2_synthetic_panel.csv",
+  "artifacts": [
+    "outputs/step3_ecosystem_summary.csv",
+    "outputs/step3_prepost_summary.csv",
+    "outputs/step3_twfe_preview.csv",
+    "outputs/step3_key_metrics.json"
+  ],
+  "reproduce": [
+    "python3 -m venv .venv-step3",
+    "source .venv-step3/bin/activate",
+    "pip install -r requirements-step3.txt",
+    "python scripts/run_step3_eda.py"
+  ]
+}

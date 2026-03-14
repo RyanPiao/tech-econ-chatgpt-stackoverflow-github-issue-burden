@@ -1,0 +1,5 @@
+outcome,coef_treatment_intensity,se_hc1,t_stat,p_value,n_obs,r_squared
+issues_opened,5.3841,1.3343,4.0351,5.5e-05,384,0.9423
+median_close_days,0.5402,0.312,1.7314,0.083373,384,0.597
+avg_first_response_hours,2.4262,0.4503,5.3883,0.0,384,0.763
+backlog_open_end_month,2.4588,3.3765,0.7282,0.466487,384,0.7922
