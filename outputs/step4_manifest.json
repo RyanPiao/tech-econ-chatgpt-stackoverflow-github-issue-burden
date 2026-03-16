@@ -1,0 +1,25 @@
+{
+  "artifact": "Step 4 synthetic baseline econometric package",
+  "created_at_utc": "2026-03-16T12:01:45.066477+00:00",
+  "input_panel": "outputs/step3_identification_ready_panel.csv",
+  "sample_start": "2021-01-01",
+  "sample_end": "2024-12-01",
+  "n_rows": 384,
+  "n_ecosystems": 8,
+  "synthetic_note": "Step 4 continues to use synthetic ecosystem-month data so econometric identification code, diagnostics, and reproducibility checks can be audited without implying real-world estimates.",
+  "outputs": [
+    "outputs/step4_model_panel.csv",
+    "outputs/step4_eda_distribution_summary.csv",
+    "outputs/step4_outcome_correlation.csv",
+    "outputs/step4_variance_decomposition.csv",
+    "outputs/step4_twfe_models.csv",
+    "outputs/step4_statsmodels_sanity_check.csv",
+    "outputs/step4_event_study_issues_opened.csv",
+    "outputs/step4_placebo_test.csv",
+    "outputs/step4_leave_one_ecosystem_out.csv",
+    "outputs/step4_identification_diagnostics.csv",
+    "outputs/step4_key_metrics.json",
+    "outputs/step4_manifest.json",
+    "docs/STEP4_baseline_econometric_model.md"
+  ]
+}

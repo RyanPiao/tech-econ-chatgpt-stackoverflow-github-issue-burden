@@ -1,17 +1,23 @@
 {
-  "step": 3,
-  "description": "Exploratory analysis and fixed-effects preview on the synthetic ecosystem-month panel.",
-  "source_panel": "outputs/step2_synthetic_panel.csv",
-  "artifacts": [
+  "artifact": "Step 3 synthetic exploratory analysis package",
+  "created_at_utc": "2026-03-15T12:08:09.514798+00:00",
+  "input_panel": "outputs/step2_synthetic_panel.csv",
+  "sample_start": "2021-01-01",
+  "sample_end": "2024-12-01",
+  "n_rows": 384,
+  "n_ecosystems": 8,
+  "synthetic_note": "Step 3 continues to use the synthetic panel so that exploratory analysis, derived features, and identification diagnostics can be inspected without presenting synthetic patterns as empirical facts.",
+  "outputs": [
+    "outputs/step3_identification_ready_panel.csv",
+    "outputs/step3_ecosystem_pre_post_summary.csv",
+    "outputs/step3_event_time_exposure_summary.csv",
+    "outputs/step3_parallel_trend_diagnostics.csv",
+    "outputs/step3_exposure_change_summary.csv",
     "outputs/step3_ecosystem_summary.csv",
     "outputs/step3_prepost_summary.csv",
     "outputs/step3_twfe_preview.csv",
-    "outputs/step3_key_metrics.json"
-  ],
-  "reproduce": [
-    "python3 -m venv .venv-step3",
-    "source .venv-step3/bin/activate",
-    "pip install -r requirements-step3.txt",
-    "python scripts/run_step3_eda.py"
+    "outputs/step3_key_metrics.json",
+    "outputs/step3_manifest.json",
+    "docs/STEP3_exploratory_analysis.md"
   ]
 }

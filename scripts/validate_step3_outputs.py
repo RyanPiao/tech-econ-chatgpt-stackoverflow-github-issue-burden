@@ -64,6 +64,10 @@ def validate() -> dict:
     event_summary = pd.read_csv(OUTPUTS / "step3_event_time_exposure_summary.csv")
     diagnostics = pd.read_csv(OUTPUTS / "step3_parallel_trend_diagnostics.csv")
     exposure_change = pd.read_csv(OUTPUTS / "step3_exposure_change_summary.csv")
+    ecosystem_means = pd.read_csv(OUTPUTS / "step3_ecosystem_summary.csv")
+    prepost_binary = pd.read_csv(OUTPUTS / "step3_prepost_summary.csv")
+    twfe_preview = pd.read_csv(OUTPUTS / "step3_twfe_preview.csv")
+    key_metrics = json.loads((OUTPUTS / "step3_key_metrics.json").read_text(encoding="utf-8"))
     manifest = json.loads((OUTPUTS / "step3_manifest.json").read_text(encoding="utf-8"))
 
     if list(panel.columns) != EXPECTED_PANEL_COLUMNS:
@@ -149,7 +153,44 @@ def validate() -> dict:
         errors.append(
             {
                 "check": "ecosystem_summary_count",
-                "message": "Ecosystem summary should contain one row per ecosystem.",
+                "message": "Ecosystem pre/post summary should contain one row per ecosystem.",
+            }
+        )
+
+    if ecosystem_means["ecosystem"].nunique() != 8:
+        errors.append(
+            {
+                "check": "ecosystem_means_count",
+                "message": "Ecosystem means summary should contain one row per ecosystem.",
+            }
+        )
+
+    if len(prepost_binary) != 4:
+        errors.append(
+            {
+                "check": "binary_prepost_rows",
+                "message": "Binary pre/post summary should contain four rows (2 groups x 2 periods).",
+            }
+        )
+
+    if set(twfe_preview["outcome"]) != {
+        "issues_opened",
+        "median_close_days",
+        "avg_first_response_hours",
+        "backlog_open_end_month",
+    }:
+        errors.append(
+            {
+                "check": "twfe_preview_outcomes",
+                "message": "TWFE preview does not cover the expected primary outcomes.",
+            }
+        )
+
+    if key_metrics.get("ecosystem_count") != 8 or key_metrics.get("panel_rows") != 384:
+        errors.append(
+            {
+                "check": "key_metrics_dimensions",
+                "message": "Key metrics JSON does not match expected panel dimensions.",
             }
         )
 
@@ -161,11 +202,19 @@ def validate() -> dict:
             }
         )
 
-    if len(manifest.get("outputs", [])) != 6:
+    if len(manifest.get("outputs", [])) != 11:
         warnings.append(
             {
                 "check": "manifest_outputs",
                 "message": "Manifest outputs list length differs from the expected Step 3 package size.",
+            }
+        )
+
+    if "docs/STEP3_exploratory_analysis.md" not in manifest.get("outputs", []):
+        errors.append(
+            {
+                "check": "manifest_docs_output",
+                "message": "Manifest must include docs/STEP3_exploratory_analysis.md.",
             }
         )
 
@@ -179,6 +228,7 @@ def validate() -> dict:
         "event_time_rows": int(len(event_summary)),
         "diagnostic_rows": int(len(diagnostics)),
         "change_rows": int(len(exposure_change)),
+        "twfe_rows": int(len(twfe_preview)),
     }
 
     return {

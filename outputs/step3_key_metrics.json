@@ -1,13 +1,13 @@
 {
-  "generated_at_utc": "2026-03-14T12:08:17.362713+00:00",
+  "generated_at_utc": "2026-03-15T12:08:09.512472+00:00",
   "panel_rows": 384,
   "ecosystem_count": 8,
   "sample_start": "2021-01-01",
   "sample_end": "2024-12-01",
-  "high_dependence_prepost_change_issues": 11.19,
-  "low_dependence_prepost_change_issues": 9.797,
-  "high_dependence_prepost_change_backlog": 15.23,
-  "low_dependence_prepost_change_backlog": 14.352,
-  "high_dependence_prepost_change_close_days": 1.054,
-  "low_dependence_prepost_change_close_days": 0.808
+  "high_exposure_prepost_change_issues": 11.45681159420289,
+  "low_mid_exposure_prepost_change_issues": 10.152695652173911,
+  "high_exposure_prepost_change_backlog": 16.186666666666667,
+  "low_mid_exposure_prepost_change_backlog": 14.18921739130434,
+  "high_exposure_prepost_change_close_days": 1.0729855072463792,
+  "low_mid_exposure_prepost_change_close_days": 0.8458643478260868
 }

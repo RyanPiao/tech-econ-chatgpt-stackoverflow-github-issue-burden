@@ -1,0 +1,14 @@
+{
+  "generated_at_utc": "2026-03-16T12:01:45.065939+00:00",
+  "panel_rows": 384,
+  "ecosystem_count": 8,
+  "sample_start": "2021-01-01",
+  "sample_end": "2024-12-01",
+  "baseline_coef_issues_opened": 5.9984919740735165,
+  "baseline_p_issues_opened": 0.000132889260179736,
+  "baseline_coef_avg_first_response_hours": 2.5500312973750248,
+  "baseline_p_avg_first_response_hours": 0.0,
+  "event_study_pretrend_joint_p_value": 1.0,
+  "placebo_p_value": 0.8628363782402089,
+  "loo_max_abs_deviation": 2.1678491860866735
+}

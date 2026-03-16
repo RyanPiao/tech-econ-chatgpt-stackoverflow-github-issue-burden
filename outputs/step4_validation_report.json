@@ -1,0 +1,17 @@
+{
+  "status": "ok",
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "panel_rows": 384,
+    "panel_columns": 45,
+    "twfe_rows": 15,
+    "event_rows": 30,
+    "loo_rows": 8,
+    "diagnostic_rows": 15,
+    "correlation_dim": [
+      11,
+      11
+    ]
+  }
+}

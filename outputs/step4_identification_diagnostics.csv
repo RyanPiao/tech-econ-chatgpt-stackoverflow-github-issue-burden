@@ -1,0 +1,16 @@
+diagnostic,value,context
+baseline_coef_avg_first_response_hours,2.5500312973750248,Baseline TWFE with controls and clustered SE.
+baseline_pvalue_avg_first_response_hours,0.0,Inference on treatment-intensity coefficient in baseline TWFE.
+baseline_coef_backlog_open_end_month,3.0295915877153843,Baseline TWFE with controls and clustered SE.
+baseline_pvalue_backlog_open_end_month,0.32175429277198275,Inference on treatment-intensity coefficient in baseline TWFE.
+baseline_coef_issue_burden_index,0.7348980996310037,Baseline TWFE with controls and clustered SE.
+baseline_pvalue_issue_burden_index,1.3378698149324464e-10,Inference on treatment-intensity coefficient in baseline TWFE.
+baseline_coef_issues_opened,5.9984919740735165,Baseline TWFE with controls and clustered SE.
+baseline_pvalue_issues_opened,0.000132889260179736,Inference on treatment-intensity coefficient in baseline TWFE.
+baseline_coef_median_close_days,0.5613569637415765,Baseline TWFE with controls and clustered SE.
+baseline_pvalue_median_close_days,0.07854820915907679,Inference on treatment-intensity coefficient in baseline TWFE.
+event_study_pretrend_joint_p_value,1.0,Joint Wald test for pre-period event interactions (k <= -2).
+event_study_mean_pre_coef,-5.993706592610938,Average pre-period event-study coefficient.
+event_study_mean_post_coef,4.130492886753257,Average post-period event-study coefficient.
+placebo_treatment_p_value,0.8628363782402089,Pre-period placebo TWFE test for treatment intensity.
+max_abs_loo_deviation,2.1678491860866735,Sensitivity of issues_opened coefficient across leave-one-ecosystem-out runs.

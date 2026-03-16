@@ -1,5 +1,5 @@
-post_label,mean_issues_opened,mean_close_days,mean_response_hours,mean_backlog,mean_issues_per_repo,dependence_group
-Post-ChatGPT,59.46,10.107,14.447,159.2,0.607,Low pre-period Stack Overflow dependence
-Pre-ChatGPT,49.663,9.299,13.077,144.848,0.52,Low pre-period Stack Overflow dependence
-Post-ChatGPT,69.06,10.792,16.035,168.48,0.548,High pre-period Stack Overflow dependence
-Pre-ChatGPT,57.87,9.738,13.975,153.25,0.468,High pre-period Stack Overflow dependence
+dependence_group,post_period_label,mean_issues_opened,mean_close_days,mean_response_hours,mean_backlog,mean_issues_per_active_repo,mean_backlog_per_active_repo,mean_issue_burden_index
+High pre-period Stack Overflow dependence,post,71.41333333333333,10.804,16.2212,170.52,0.5153707777567385,1.2354555412340658,0.7393454997395069
+High pre-period Stack Overflow dependence,pre,59.95652173913044,9.731014492753623,14.073768115942029,154.33333333333334,0.43961561695834356,1.1375531559499086,-0.4360251646619404
+Low/mid pre-period Stack Overflow dependence,post,60.144,10.236559999999999,14.65304,160.024,0.6136938762737211,1.6384422899586222,0.3428393860317795
+Low/mid pre-period Stack Overflow dependence,pre,49.99130434782609,9.390695652173914,13.198,145.83478260869566,0.5267489831737356,1.5420553762599625,-0.5932182554153167

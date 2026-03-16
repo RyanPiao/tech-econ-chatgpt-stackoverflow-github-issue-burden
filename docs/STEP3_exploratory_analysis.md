@@ -9,23 +9,30 @@ This step uses the synthetic panel in `outputs/step2_synthetic_panel.csv`, cover
 The panel remains synthetic on purpose. That keeps the workflow honest: readers can inspect the design logic, variable construction, and model code without mistaking the current outputs for real-world evidence.
 
 ## What was produced
-Step 3 adds four exploratory artifacts:
+Step 3 adds these exploratory artifacts:
 
+- `outputs/step3_identification_ready_panel.csv`
+- `outputs/step3_ecosystem_pre_post_summary.csv`
+- `outputs/step3_event_time_exposure_summary.csv`
+- `outputs/step3_parallel_trend_diagnostics.csv`
+- `outputs/step3_exposure_change_summary.csv`
 - `outputs/step3_ecosystem_summary.csv`
 - `outputs/step3_prepost_summary.csv`
 - `outputs/step3_twfe_preview.csv`
 - `outputs/step3_key_metrics.json`
+- `outputs/step3_manifest.json`
+- `docs/STEP3_exploratory_analysis.md`
 
-It also adds the reproducible runner:
+It also uses the reproducible runner:
 
 - `scripts/run_step3_eda.py`
 
 ## Descriptive patterns
-Using the median split of pre-period Stack Overflow dependence:
+Using the exposure buckets derived from pre-period Stack Overflow dependence:
 
-- High-dependence ecosystems show a larger post-period increase in issues opened (`+11.272`) than low-dependence ecosystems (`+10.011`).
-- High-dependence ecosystems also show a somewhat larger increase in month-end issue backlog (`+15.353`) than low-dependence ecosystems (`+14.524`).
-- Median issue close duration rises more in the high-dependence group (`+1.054` days) than in the low-dependence group (`+0.808` days).
+- High-dependence ecosystems show a larger post-period increase in issues opened (`+11.457`) than low/mid-dependence ecosystems (`+10.153`).
+- High-dependence ecosystems also show a somewhat larger increase in month-end issue backlog (`+16.187`) than low/mid-dependence ecosystems (`+14.189`).
+- Median issue close duration rises more in the high-dependence group (`+1.073` days) than in the low/mid-dependence group (`+0.846` days).
 
 These differences are modest, but they move in the hypothesized direction: ecosystems that relied more heavily on Stack Overflow before the ChatGPT shock experience somewhat greater pressure on GitHub issue management afterward.
 
@@ -40,7 +47,7 @@ Preview coefficients:
 
 - `issues_opened`: `5.1086` (HC1 s.e. `1.7899`, p=`0.004316`)
 - `median_close_days`: `0.5402` (HC1 s.e. `0.3120`, p=`0.083373`)
-- `avg_first_response_hours`: `2.4262` (HC1 s.e. `0.4503`, p `< 0.001`)
+- `avg_first_response_hours`: `2.4262` (HC1 s.e. `0.4503`, p=`0.000000`)
 - `backlog_open_end_month`: `2.3938` (HC1 s.e. `3.4354`, p=`0.485921`)
 
 ## Interpretation boundary
