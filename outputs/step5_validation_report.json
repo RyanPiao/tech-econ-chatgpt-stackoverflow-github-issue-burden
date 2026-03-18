@@ -1,0 +1,23 @@
+{
+  "status": "ok",
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "sensitivity_rows": 37,
+    "dynamic_rows": 150,
+    "heterogeneity_rows": 36,
+    "dynamic_outcomes": [
+      "avg_first_response_hours",
+      "backlog_open_end_month",
+      "issue_burden_index",
+      "issues_opened",
+      "median_close_days"
+    ],
+    "heterogeneity_dimensions": [
+      "pre_period_active_repo_scale",
+      "pre_period_backlog_per_repo",
+      "pre_period_issue_burden_index"
+    ],
+    "permutation_rows": 2
+  }
+}

@@ -1,0 +1,4 @@
+outcome,term,coef,std_err,p_value,n_obs,r2,spec
+log1p_issues_opened,treatment_intensity:post_chatgpt,0.011886585801358346,0.012340671224591529,0.3354450802956026,384,0.9368091314651975,main_twfe
+issue_burden_index,treatment_intensity:post_chatgpt,0.3691550539679646,0.07392964286871341,5.93472316071622e-07,384,0.8715248644308426,alt_outcome
+log1p_issues_opened,treatment_intensity:placebo_post,0.011886585801357125,0.012340671224591784,0.3354450802956622,384,0.9368091314651974,placebo_timing
