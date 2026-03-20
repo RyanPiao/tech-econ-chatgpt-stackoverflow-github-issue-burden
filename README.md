@@ -9,7 +9,7 @@ Canonical project repo for the approved topic:
 - ✅ Step 3: exploratory analysis and identification-ready scaffolding
 - ✅ Step 4: baseline econometric model + identification diagnostics
 - ✅ Step 5: robustness checks (sensitivity, dynamics, heterogeneity)
-- ⏳ Step 6: extended dynamic and heterogeneity deep-dive
+- ✅ Step 6: finalized model + alternative-explanation robustness package
 - ⏳ Step 7: final synthesis package
 
 ## Research question
@@ -21,7 +21,8 @@ This repository now includes:
 - a synthetic demonstration dataset used to validate structure and pipeline logic;
 - Step 3 exploratory summaries and identification-ready transformations;
 - Step 4 model-ready pipeline outputs with advanced EDA artifacts and baseline FE estimates;
-- Step 5 robustness outputs covering covariance sensitivity, transformation checks, permutation inference, event-study dynamics, and subgroup heterogeneity; and
+- Step 5 robustness outputs covering covariance sensitivity, transformation checks, permutation inference, event-study dynamics, and subgroup heterogeneity;
+- Step 6 finalized model outputs with trend-adjusted TWFE and alternative-explanation diagnostics; and
 - reproducible validation reports for each implemented step.
 
 ## Why the current data are synthetic
@@ -43,37 +44,45 @@ That choice is deliberate. A quick partial scrape would be easy to over-interpre
 ├── requirements-step3.txt
 ├── requirements-step4.txt
 ├── requirements-step5.txt
+├── requirements-step6.txt
 ├── docs/
 │   ├── STEP1_problem_framing.md
 │   ├── STEP2_data_extraction_spec.md
 │   ├── STEP2_preanalysis_lock.md
 │   ├── STEP3_exploratory_analysis.md
 │   ├── STEP4_baseline_econometric_model.md
-│   └── STEP5_robustness_checks.md
+│   ├── STEP5_robustness_checks.md
+│   └── STEP6_robustness_and_polish.md
 ├── notebooks/
 │   ├── STEP2_synthetic_panel_walkthrough.ipynb
 │   ├── STEP3_exploratory_analysis.ipynb
-│   └── STEP4_baseline_econometric_model.ipynb
+│   ├── STEP4_baseline_econometric_model.ipynb
+│   └── STEP6_robustness_and_polish.ipynb
 ├── outputs/
 │   ├── step2_*.csv/json
 │   ├── step3_*.csv/json
 │   ├── step4_*.csv/json
-│   └── step5_*.csv/json
+│   ├── step5_*.csv/json
+│   └── step6_*.csv/json
 └── scripts/
     ├── build_step2_synthetic_panel.py
     ├── build_step3_analysis.py
     ├── build_step4_econometrics.py
     ├── build_step5_robustness.py
+    ├── build_step6_final_model.py
     ├── run_step3_eda.py
     ├── run_step3_pipeline.py
     ├── run_step4_econometrics.py
     ├── run_step4_pipeline.py
     ├── run_step5_robustness.py
     ├── run_step5_pipeline.py
+    ├── run_step6_finalize.py
+    ├── run_step6_pipeline.py
     ├── validate_step2_outputs.py
     ├── validate_step3_outputs.py
     ├── validate_step4_outputs.py
-    └── validate_step5_outputs.py
+    ├── validate_step5_outputs.py
+    └── validate_step6_outputs.py
 ```
 
 ## Step artifacts
@@ -148,25 +157,40 @@ That choice is deliberate. A quick partial scrape would be easy to over-interpre
 - `outputs/step5_manifest.json`
 - `outputs/step5_validation_report.json`
 
-## Reproduce Step 5 outputs
+### Step 6
+- `docs/STEP6_robustness_and_polish.md`
+- `requirements-step6.txt`
+- `scripts/build_step6_final_model.py`
+- `scripts/validate_step6_outputs.py`
+- `scripts/run_step6_finalize.py`
+- `scripts/run_step6_pipeline.py`
+- `notebooks/STEP6_robustness_and_polish.ipynb`
+- `outputs/step6_finalized_model_results.csv`
+- `outputs/step6_alternative_explanations.csv`
+- `outputs/step6_cutoff_sweep.csv`
+- `outputs/step6_key_metrics.json`
+- `outputs/step6_manifest.json`
+- `outputs/step6_validation_report.json`
+
+## Reproduce Step 6 outputs
 From the repository root:
 
 ```bash
-python3 -m venv .venv-step5
-source .venv-step5/bin/activate
-pip install -r requirements-step5.txt
-python scripts/run_step5_pipeline.py
+python3 -m venv .venv-step6
+source .venv-step6/bin/activate
+pip install -r requirements-step6.txt
+python scripts/run_step6_pipeline.py
 ```
 
-If Step 2–Step 4 artifacts already exist and you only want the Step 5 layer:
+If Step 2–Step 5 artifacts already exist and you only want the Step 6 layer:
 
 ```bash
-source .venv-step5/bin/activate
-python scripts/run_step5_robustness.py
+source .venv-step6/bin/activate
+python scripts/run_step6_finalize.py
 ```
 
-## Step 5 summary takeaway
-In the synthetic panel, the Step 4 treatment-intensity pattern for issue inflow and response burden remains directionally stable under multiple covariance assumptions, weighted estimation, winsorization, and permutation inference. Dynamic results are strongest for issue inflow and first-response burden, while some outcomes (especially backlog and close-time dynamics) remain noisier and motivate further specification work in Step 6.
+## Step 6 summary takeaway
+In the synthetic panel, the finalized trend-adjusted TWFE model keeps a positive treatment-intensity effect for issue inflow and first-response burden. Alternative-explanation checks (weighting, lag control, symmetric windows, lead placebo, ratio outcomes) remain directionally aligned in most cases, while adding direct Stack Overflow activity controls attenuates precision, suggesting channel overlap rather than a clean contradiction.
 
 ## Current interpretation boundary
-This repository still does **not** claim empirical estimates from live public data. Step 5 remains a synthetic robustness-validation stage designed to stress-test pipeline logic and inference stability before real-data implementation.
+This repository still does **not** claim empirical estimates from live public data. Step 6 remains a synthetic robustness-validation stage designed to finalize specification choices and stress-test alternative explanations before real-data implementation.

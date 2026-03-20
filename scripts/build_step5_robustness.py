@@ -557,6 +557,8 @@ def build_key_metrics(
     ].iloc[0]
 
     dyn_issues = dynamic.loc[dynamic["outcome"] == "issues_opened"].iloc[0]
+    dyn_close = dynamic.loc[dynamic["outcome"] == "median_close_days"].iloc[0]
+    dyn_backlog = dynamic.loc[dynamic["outcome"] == "backlog_open_end_month"].iloc[0]
 
     split_repo = heterogeneity.loc[
         (heterogeneity["outcome"] == "issues_opened")
@@ -580,6 +582,10 @@ def build_key_metrics(
             perm_issues["permutation_empirical_p_value"]
         ),
         "dynamic_pretrend_p_issues_opened": float(dyn_issues["pretrend_joint_p_value"]),
+        "dynamic_pretrend_p_median_close_days": float(dyn_close["pretrend_joint_p_value"]),
+        "dynamic_pretrend_p_backlog_open_end_month": float(
+            dyn_backlog["pretrend_joint_p_value"]
+        ),
         "dynamic_cumulative_post_0_12_issues_opened": float(
             dyn_issues["cumulative_post_coef_0_12"]
         ),
@@ -633,6 +639,8 @@ def build_step5_markdown(
 
     dyn_issues = dynamic.loc[dynamic["outcome"] == "issues_opened"].iloc[0]
     dyn_response = dynamic.loc[dynamic["outcome"] == "avg_first_response_hours"].iloc[0]
+    dyn_close = dynamic.loc[dynamic["outcome"] == "median_close_days"].iloc[0]
+    dyn_backlog = dynamic.loc[dynamic["outcome"] == "backlog_open_end_month"].iloc[0]
 
     split_repo = heterogeneity.loc[
         (heterogeneity["outcome"] == "issues_opened")
@@ -695,6 +703,8 @@ For `issues_opened`:
 For `avg_first_response_hours`:
 - Joint pretrend p-value (k <= -2): {f4(float(dyn_response['pretrend_joint_p_value']))}
 - Cumulative post coefficient, k=0..12: {f4(float(dyn_response['cumulative_post_coef_0_12']))}
+
+For `median_close_days` and `backlog_open_end_month`, pretrend p-values are {f4(float(dyn_close['pretrend_joint_p_value']))} and {f4(float(dyn_backlog['pretrend_joint_p_value']))}, respectively, signaling weaker dynamic identification for those slower-moving outcomes in this synthetic panel.
 
 ## Heterogeneity checks
 Heterogeneity is tested across three pre-period ecosystem partitions:

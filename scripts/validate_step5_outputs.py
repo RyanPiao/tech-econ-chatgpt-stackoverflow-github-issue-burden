@@ -210,6 +210,23 @@ def validate() -> dict:
             }
         )
 
+    required_key_metrics = {
+        "baseline_coef_issues_opened",
+        "permutation_empirical_p_issues_opened",
+        "dynamic_pretrend_p_issues_opened",
+        "dynamic_pretrend_p_median_close_days",
+        "dynamic_pretrend_p_backlog_open_end_month",
+        "heterogeneity_repo_scale_gap_high_minus_low",
+    }
+    if not required_key_metrics.issubset(set(key_metrics.keys())):
+        errors.append(
+            {
+                "check": "key_metrics_fields",
+                "message": "Step 5 key metrics JSON is missing required summary fields.",
+                "details": sorted(required_key_metrics - set(key_metrics.keys())),
+            }
+        )
+
     required_manifest_outputs = {
         "outputs/step5_sensitivity_checks.csv",
         "outputs/step5_dynamic_analysis.csv",

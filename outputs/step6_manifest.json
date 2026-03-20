@@ -1,0 +1,19 @@
+{
+  "artifact": "Step 6 finalized model + alternative-explanation robustness package",
+  "created_at_utc": "2026-03-20T12:04:58.967139+00:00",
+  "input_panel": "outputs/step4_model_panel.csv",
+  "sample_start": "2021-01-01",
+  "sample_end": "2024-12-01",
+  "n_rows": 384,
+  "n_ecosystems": 8,
+  "synthetic_note": "Step 6 keeps the synthetic-only boundary and focuses on specification finalization and alternative-explanation robustness diagnostics.",
+  "outputs": [
+    "outputs/step6_finalized_model_results.csv",
+    "outputs/step6_alternative_explanations.csv",
+    "outputs/step6_cutoff_sweep.csv",
+    "outputs/step6_key_metrics.json",
+    "outputs/step6_manifest.json",
+    "outputs/step6_validation_report.json",
+    "docs/STEP6_robustness_and_polish.md"
+  ]
+}

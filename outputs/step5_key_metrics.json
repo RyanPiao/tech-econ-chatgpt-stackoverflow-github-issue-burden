@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-03-18T13:56:53.507387+00:00",
+  "generated_at_utc": "2026-03-20T12:04:58.608279+00:00",
   "panel_rows": 384,
   "ecosystem_count": 8,
   "sample_start": "2021-01-01",
@@ -10,6 +10,8 @@
   "winsorized_coef_issues_opened": 5.947043998645929,
   "permutation_empirical_p_issues_opened": 0.0033222591362126247,
   "dynamic_pretrend_p_issues_opened": 1.0,
+  "dynamic_pretrend_p_median_close_days": 0.0,
+  "dynamic_pretrend_p_backlog_open_end_month": 0.0,
   "dynamic_cumulative_post_0_12_issues_opened": 91.46228264413757,
   "heterogeneity_repo_scale_low_coef_issues_opened": 7.128644105409289,
   "heterogeneity_repo_scale_high_coef_issues_opened": 4.205048124564265,

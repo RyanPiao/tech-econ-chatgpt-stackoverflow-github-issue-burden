@@ -1,0 +1,31 @@
+{
+  "status": "ok",
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "final_model_rows": 10,
+    "alternative_rows": 9,
+    "cutoff_rows": 5,
+    "outcomes": [
+      "avg_first_response_hours",
+      "backlog_open_end_month",
+      "issue_burden_index",
+      "issues_opened",
+      "median_close_days"
+    ],
+    "check_ids": [
+      "anticipation_lead6_placebo",
+      "anticipation_lead6_treatment",
+      "baseline_reference",
+      "eco_specific_trends",
+      "intensive_margin_ratio",
+      "lagged_outcome",
+      "repo_size_weighting",
+      "so_activity_controls",
+      "symmetric_window"
+    ],
+    "true_cutoff": [
+      "2022-12-01"
+    ]
+  }
+}

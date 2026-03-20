@@ -46,6 +46,8 @@ For `avg_first_response_hours`:
 - Joint pretrend p-value (k <= -2): 1.0000
 - Cumulative post coefficient, k=0..12: 27.6434
 
+For `median_close_days` and `backlog_open_end_month`, pretrend p-values are 0.0000 and 0.0000, respectively, signaling weaker dynamic identification for those slower-moving outcomes in this synthetic panel.
+
 ## Heterogeneity checks
 Heterogeneity is tested across three pre-period ecosystem partitions:
 1. active repository scale,
